@@ -1,38 +1,248 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #1f1f1f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --grey: #333333;
+  --dark: #0C0C0C;
+  --red: #E14938;
+  --bg: #0F1112;
+  --bg1: #666666;
+  --lightGrey: #999999;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bg-Grey {
+  background-color: var(--grey);
+}
+
+.bg-Dark {
+  background-color: var(--dark);
+}
+
+.text-grey {
+  color: var(--lightGrey);
+}
+
+.Border {
+  border-right: 1px solid rgb(26, 26, 26);
+  border-left: 1px solid rgb(26, 26, 26);
+}
+
+.Border-right {
+  border-right: 1px solid rgb(26, 26, 26);
+}
+
+.Border-left {
+  border-left: 1px solid rgb(26, 26, 26);
+}
+
+.width {
+  width: 50%;
+}
+
+.sm-screen {
+  display: none;
+}
+
+.bg-Red {
+  background-color: var(--red);
+}
+
+.text-Red {
+  color: #E14938;
+}
+
+.navbar {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.cart{
+  margin-left: 20px;
+}
+
+.priceTag {
+  padding: 10px;
+  background-color: #E14938;
+  color: white;
+  position: absolute;
+  top: -30%;
+  left: 63%;
+}
+
+.checked {
+  color: orange;
+}
+
+.starRating {
+  margin-left: 10px;
+}
+
+.Card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid lightgray;
+  padding: 0px;
+}
+
+.Card:hover .cardFooter {
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: 10px;
+  transform: translateY(0);
+}
+
+.Card:hover .cardBody{
+  margin-top: -20px;
+}
+
+.cardBody {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-top: 5px;
+  margin-top: 10px;
+  transition: all .4s ease-in-out;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  border-top: 1px solid lightgray;
+  transform: translateY(100px);
+  transition: all .4s ease-in-out;
+}
+
+.cardHeading {
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.cartIcon {
+  border: 1px solid lightgray;
+  padding: 5px 10px;
+}
+
+.cartIcon:hover {
+  background-color: #E14938;
   color: white;
+  border: 1px solid #E14938;
 }
 
-.App-link {
-  color: #61dafb;
+.heading{
+  font-size: 22px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main{
+  position: absolute;
+  margin-top: -200px;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.not-main{
+  z-index: 0;
+}
+
+.listCont{
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem{
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.imgCont{
+  display: none;
+  padding: 0px 5px;
+}
+
+.listSubItem{
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.listItem:hover .imgCont{
+  display: block;
+}
+
+.sNO{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.bhashan{
+  border: 1px solid black;
+  border-left: none;
+  padding: 10px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .media-center {
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .cart{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    margin-left: 0px;
+  }
+
+  .md-screen {
+    display: none;
+  }
+
+  .sm-screen {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .priceTag {
+    left: 70%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .priceTag {
+    left: 80%;
+  }
+
+
+
+  .main{
+    margin-top: -80px;
   }
 }
