@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css'
 import Navbar from './Navbar'
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -16,14 +17,19 @@ const Header = () => {
                         </div>
                         <div className="col-md-7 col-sm-0">
                         </div>
-                        <div className="col-md-3 col-sm-3 text-grey d-flex flex-row align-items-center media-center justify-content-end">
-                            <div className='ps-2 pe-1 py-2 Border-left'>
-                                <i className="fas fa-user"></i>
-                            </div>
-                            <div className='pe-2 ps-1 py-2 Border-right'>
-                                Login
-                            </div>
+                        <div className="col-md-3 col-sm-3 text-end">
+                            <Link to="/login" className="btn m-0 p-1">
+                                <div className="text-grey d-flex flex-row align-items-center media-center">
+                                    <div className='ps-2 pe-1 py-2 Border-left'>
+                                        <i className="fas fa-user"></i>
+                                    </div>
+                                    <div className='pe-2 ps-1 py-2 Border-right'>
+                                        Login
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
+
 
                     </div>
                 </div>

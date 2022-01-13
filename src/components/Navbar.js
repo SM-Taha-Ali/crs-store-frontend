@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect} from 'react'
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    let location = useLocation();
+    useEffect(() => {
+    }, [location]);
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,27 +16,27 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item px-1">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item px-1">
-                                <a className="nav-link" href="#">Shop</a>
+                                <Link className={`nav-link ${location.pathname === "/shop" ? "active" : ""}`} aria-current="page" to="/shop">Shop</Link>
                             </li>
                             <li className="nav-item px-1">
-                                <a className="nav-link" href="#">About Us</a>
+                                <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About Us</Link>
                             </li>
                             <li className="nav-item px-1">
-                                <a className="nav-link" href="#">Contact Us</a>
+                                <Link className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} to="/contact">Contact Us</Link>
                             </li>
                         </ul>
                         <form className="d-flex">
                             <div className="input-group">
                                 <input type="text" className="form-control" placeholder="Search here..." aria-label="Search here..." aria-describedby="button-addon2" />
-                                <button className="btn bg-Red text-white" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+                                <button className="btn bg-Red text-white" type="button" id="button-addon2"><i className="fas fa-search"></i></button>
                             </div>
                         </form>
                         <div className="bg-Red py-4 px-3 cart">
                             <span className='text-white px-1'>
-                                <i class="fas fa-shopping-cart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </span>
                             <span className='text-white ps-1'>
                                 0

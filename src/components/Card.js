@@ -10,20 +10,20 @@ const Card = () => {
                     <div>
                         <h5 className="cardHeading text-dark ">Dota 2</h5>
                         <div className='starRating'>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                            <span className="fa fa-star checked"></span>
+                            <span className="fa fa-star checked"></span>
+                            <span className="fa fa-star checked"></span>
+                            <span className="fa fa-star"></span>
+                            <span className="fa fa-star"></span>
                         </div>
                     </div>
                     <div className='priceTag'>$550.00</div>
                 </div>
                 <div className="cardFooter">
-                    <div className='cartIcon'><i class="fas fa-cart-arrow-down"></i></div>
-                    <div className='cartIcon'><i class="fas fa-random"></i></div>
-                    <div className='cartIcon'><i class="fas fa-heart"></i></div>
-                    <div className='cartIcon'><i class="fas fa-eye"></i></div>
+                    <div className='cartIcon'><i className="fas fa-cart-arrow-down"></i></div>
+                    <div className='cartIcon'><i className="fas fa-random"></i></div>
+                    <div className='cartIcon'><i className="fas fa-heart"></i></div>
+                    <div className='cartIcon'><i className="fas fa-eye"></i></div>
                 </div>
             </div>
         </>
