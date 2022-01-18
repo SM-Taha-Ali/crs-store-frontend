@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <>
+        <div>
             <div className="md-screen bg-Grey">
                 <div className="container">
                     <div className="row g-0">
@@ -56,7 +56,7 @@ const Header = () => {
                     <Navbar />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

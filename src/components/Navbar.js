@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -26,6 +26,9 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item px-1">
                                 <Link className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} to="/contact">Contact Us</Link>
+                            </li>
+                            <li className="nav-item px-1">
+                                <Link className={`nav-link ${location.pathname === "/admin" ? "active" : ""}`} to="/admin">Admin Panel</Link>
                             </li>
                         </ul>
                         <form className="d-flex">

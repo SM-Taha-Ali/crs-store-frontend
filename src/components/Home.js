@@ -3,10 +3,15 @@ import '../App.css'
 import Accordion from './Accordion'
 import Card from './Card'
 import Footer from './Footer'
+import Carousel from './Carousel';
+
 
 const Home = () => {
     return (
         <>
+            <div className="not-main">
+                <Carousel />
+            </div>
             <div className="main">
                 <div className="container bg-white p-3">
                     <div className="row">
@@ -39,15 +44,15 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="second-container container bg-white">
-                    <div className='d-flex flex-row  justify-content-between'>
+                    <div className='media_products_responsive'>
                         <h4 className='ms-3'>OUR PRODUCTS</h4>
-                        <div className="second-header">
-                            <div className="border p-2 mx-2">ALL</div>
-                            <div className="border p-2 mx-2">PC and Mac</div>
-                            <div className="border p-2 mx-2">PLAYSTATION</div>
-                            <div className="border p-2 mx-2">TABLETS</div>
-                            <div className="border p-2 mx-2">WII</div>
-                            <div className="border p-2 mx-2">XBOX</div>
+                        <div className="second-header row">
+                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">ALL</div>
+                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">PC and Mac</div>
+                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">PLAYSTATION</div>
+                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">TABLETS</div>
+                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">WII</div>
+                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">XBOX</div>
                         </div>
                     </div>
                     <hr className='colorDefault' />

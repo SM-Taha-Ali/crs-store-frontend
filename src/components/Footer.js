@@ -8,7 +8,7 @@ const Footer = () => {
                     <div className="col-lg-4 col-md-12 footer-1-item p-4">
                         <div className="footer-img-cont px-2">
                             <div className="p-4 img-border">
-                                <i class="fas fa-location-arrow"></i>
+                                <i className="fas fa-location-arrow"></i>
                             </div>
                         </div>
                         <div className="footer-text-cont text-white px-2">
@@ -21,7 +21,7 @@ const Footer = () => {
                     <div className="col-lg-4 col-md-12 footer-1-item p-4">
                         <div className="footer-img-cont px-2">
                             <div className="p-4 img-border">
-                                <i class="fas fa-location-arrow"></i>
+                                <i className="fas fa-location-arrow"></i>
                             </div>
                         </div>
                         <div className="footer-text-cont text-white px-2">
@@ -34,7 +34,7 @@ const Footer = () => {
                     <div className="col-lg-4 col-md-12 footer-1-item p-4">
                         <div className="footer-img-cont px-2">
                             <div className="p-4 img-border">
-                                <i class="fas fa-location-arrow"></i>
+                                <i className="fas fa-location-arrow"></i>
                             </div>
                         </div>
                         <div className="footer-text-cont text-white px-2">
@@ -54,11 +54,11 @@ const Footer = () => {
                             <span className='fs-1 d-inline-block ms-2'>STORE</span>
                         </div>
                         <div className="ms-3 d-flex align-items-center media-footer-icons">
-                            <i class="fab fa-facebook-square fs-2 me-2"></i>
-                            <i class="fab fa-twitter-square fs-2 mx-2"></i>
-                            <i class="fab fa-pinterest-square fs-2 mx-2"></i>
-                            <i class="fab fa-google-plus-square fs-2 mx-2"></i>
-                            <i class="fab fa-linkedin fs-2 mx-2"></i>
+                            <i className="fab fa-facebook-square fs-2 me-2"></i>
+                            <i className="fab fa-twitter-square fs-2 mx-2"></i>
+                            <i className="fab fa-pinterest-square fs-2 mx-2"></i>
+                            <i className="fab fa-google-plus-square fs-2 mx-2"></i>
+                            <i className="fab fa-linkedin fs-2 mx-2"></i>
                         </div>
                     </div>
                     <div className="col-lg-2 col-md-3">
@@ -110,9 +110,9 @@ const Footer = () => {
                         © 2015 Crime Spree Community Product. All Rights Reserved. Designed by <span className="text-Red mx-1">CRS Community</span>
                     </p>
                     <div className='fs-3 d-flex align-items-center'>
-                        <i class="fab fa-cc-paypal mx-1"></i>
-                        <i class="fab fa-cc-visa mx-1"></i>
-                        <i class="fab fa-cc-mastercard mx-1"></i>
+                        <i className="fab fa-cc-paypal mx-1"></i>
+                        <i className="fab fa-cc-visa mx-1"></i>
+                        <i className="fab fa-cc-mastercard mx-1"></i>
                     </div>
                 </div>
             </div>

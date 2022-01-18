@@ -167,6 +167,15 @@ body {
   margin-right: auto;
 }
 
+.contact-main  {
+  position: absolute;
+  margin-top: -430px;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .login-heading{
   font-size: 42px;
   font-weight: bold;
@@ -197,6 +206,18 @@ body {
 }
 
 .btn-Red{
+  background-color: white;
+  border: 2px solid #E14938;
+  color: black;
+}
+
+.btn2-Red{
+  background-color: #E14938;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn2-Red:hover{
   background-color: white;
   border: 2px solid #E14938;
   color: black;
@@ -305,8 +326,13 @@ a {
 }
 
 .second-header{
-  display: flex;
-  flex-direction: row;
+  width: 98%;
+  margin: auto;
+}
+
+.our_products:hover{
+  background-color: #E14938;
+  color: white;
 }
 
 ul, li{
@@ -417,6 +443,76 @@ ul, li{
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
 }
 
+.lol{
+  max-height: 100%;
+}
+
+
+.position{
+  position: relative;
+}
+
+.height_100{
+  min-height: 100%;
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #0f1112; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+  color: white;
+  opacity: 1;
+}
+
+.Rounded{
+  border-radius: 15px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+.side-bar-control{
+  display: none;
+}
+
+#secondary-main{
+  display: none;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
 @media only screen and (max-width: 768px) {
   .media-center {
     text-align: center;
@@ -455,11 +551,34 @@ ul, li{
     padding: 0px;
   }
 
+  .login-main {
+    margin-top: -150px;
+  }
+
+  .contact-main {
+    margin-top: -175px;
+  }
+
+  .login-card{
+    width: 85%;
+  }
+
 }
 
 @media only screen and (min-width: 1280px) {
   .priceTag {
     left: 70%;
+  }
+  
+}
+
+@media only screen and (max-width: 1280px) {
+  .login-heading{
+    display: none;
+  }
+
+  .contact-main {
+    margin-top: -350px;
   }
   
 }
@@ -484,10 +603,33 @@ ul, li{
   }
 
   .login-main {
-    margin-top: -80px;
+    margin-top: -50px;
+  }
+
+  .contact-main {
+    margin-top: -60px;
   }
 
   .login-card{
     width: 95%;
+  }
+
+  .media_products_responsive{
+    display: block;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 762px) {
+  #main{
+    display: none;
+  }
+
+  #secondary-main{
+    display: block;
   }
 }
