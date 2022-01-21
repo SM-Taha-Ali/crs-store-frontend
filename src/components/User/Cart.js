@@ -10,7 +10,7 @@ const Cart = () => {
                 <Carousel />
             </div>
             <div className="contact-main rounded">
-                <div className="container p-4">
+                <div className="container bg-white p-4">
                     <h1 className="text-center text-Red">
                         YOUR CART
                     </h1>
