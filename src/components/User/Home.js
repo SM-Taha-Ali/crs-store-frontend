@@ -1,12 +1,14 @@
-import React from 'react'
-import '../App.css'
-import Accordion from './Accordion'
-import Card from './Card'
-import Footer from './Footer'
+import React, { useContext } from 'react';
+import '../../Stylesheets/App.css'
+import Accordion from './Accordion';
+import Card from './Card';
+import Footer from '../Footer';
 import Carousel from './Carousel';
+import productContext from '../../context/products/productContext';
 
 
 const Home = () => {
+    const state = useContext(productContext);
     return (
         <>
             <div className="not-main">
@@ -21,12 +23,12 @@ const Home = () => {
                                 <hr />
                             </div>
                             <div className="row g-0">
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
                             </div>
 
                         </div>
@@ -62,12 +64,12 @@ const Home = () => {
                         </div>
                         <div className="col-xl-9 col-lg-12">
                             <div className="row g-0">
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
                             </div>
                         </div>
                     </div>

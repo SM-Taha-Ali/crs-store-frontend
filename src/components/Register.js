@@ -1,5 +1,5 @@
 import React from 'react'
-import Carousel from './Carousel';
+import Carousel from './User/Carousel';
 import Footer from './Footer'
 
 const Register = () => {

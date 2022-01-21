@@ -1,0 +1,18 @@
+.shop-side-bar-card{
+    width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.shop-side-bar-card-header{
+    background-color: #E14938;
+    padding: 15px;
+    color: white;
+    display: block;
+}
+
+.shop-card-cateogory-list li:hover{
+    text-decoration: underline;
+    color: #E14938;
+    cursor: pointer;
+}

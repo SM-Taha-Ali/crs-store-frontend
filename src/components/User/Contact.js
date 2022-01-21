@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from './Carousel';
-import Footer from './Footer';
+import Footer from '../Footer';
 
 const Contact = () => {
     return (

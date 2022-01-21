@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useLocation } from "react-router-dom";
 import Dashboard from './Dashboard';
-import Footer from './Footer';
+import Footer from '../Footer';
 import Orders from './Orders';
 import Products from './Products';
 import Users from './Users';

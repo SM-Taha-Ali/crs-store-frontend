@@ -1,4 +1,4 @@
-import '../master.css'
+import '../../Stylesheets/Dashboard.css'
 import React from 'react'
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, BarChart, Bar} from 'recharts';
 

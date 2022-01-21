@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from './Footer'
-import Carousel from './Carousel';
+import Carousel from './User/Carousel';
 import { Link } from "react-router-dom";
 
 const Login = () => {
