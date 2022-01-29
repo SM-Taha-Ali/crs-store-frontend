@@ -54,7 +54,7 @@ const Orders = () => {
                                 <td>Nvidia GTX 1060</td>
                                 <td>Shipped</td>
                                 <td className='text-center'>
-                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-edit text-success"></i></button>
+                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="far fa-edit text-success"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -63,7 +63,7 @@ const Orders = () => {
                                 <td>Nvidia GTX 1060</td>
                                 <td>Delievered</td>
                                 <td className='text-center'>
-                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-edit text-success"></i></button>
+                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="far fa-edit text-success"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -72,7 +72,7 @@ const Orders = () => {
                                 <td>Nvidia GTX 1060</td>
                                 <td>Packed</td>
                                 <td className='text-center'>
-                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-edit text-success"></i></button>
+                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="far fa-edit text-success"></i></button>
                                 </td>
                             </tr>
 

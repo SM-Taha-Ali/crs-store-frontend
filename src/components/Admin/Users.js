@@ -26,7 +26,7 @@ const Users = () => {
                                 <td>03302851161</td>
                                 <td>skyline#123</td>
                                 <td className='text-center'>
-                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-ban text-Red"></i></button>
+                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="far fa-ban text-Red"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -37,7 +37,7 @@ const Users = () => {
                                 <td>03302851161</td>
                                 <td>skyline#123</td>
                                 <td className='text-center'>
-                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-ban text-Red"></i></button>
+                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="far fa-ban text-Red"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -48,7 +48,7 @@ const Users = () => {
                                 <td>03302851161</td>
                                 <td>skyline#123</td>
                                 <td className='text-center'>
-                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-ban text-Red"></i></button>
+                                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="far fa-ban text-Red"></i></button>
                                 </td>
                             </tr>
 

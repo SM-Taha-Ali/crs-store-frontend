@@ -1,12 +1,16 @@
 import '../../Stylesheets/shop.css'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react';
 import Carousel from './Carousel';
 import Card from './Card';
 import Footer from '../Footer';
 import productContext from '../../context/products/productContext';
 
 const Shop = () => {
-    const state = useContext(productContext);
+    const context = useContext(productContext);
+    const { products, getProduct } = context
+    useEffect(() => {
+        getProduct()
+    }, [])
     return (
         <>
             <div className="not-main">
@@ -46,9 +50,9 @@ const Shop = () => {
                         </div>
                         <div className="col-md-9 col-sm-12">
                             <div className="row g-0">                                
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                {products.map((product) => {
+                                    return <Card key={product._id} product={product} />
+                                })}
                             </div>
                         </div>
                     </div>

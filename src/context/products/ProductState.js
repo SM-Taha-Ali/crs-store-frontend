@@ -1,15 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductContext from './productContext';
 
 const ProductState = (props) => {
-    const state = {
-        name: "Nvidia 1060 3gb",
-        price: 10000,
-        category: "graphics card",
-        discount: null
+
+    const host = "http://localhost:5000"
+
+    const productsInitial = [ ]
+    const [products, setProducts] = useState(productsInitial)
+
+    // Get Products
+
+    const getProduct = async () => {
+        // TODO API CALL
+        const response = await fetch(`${host}/api/products/getproduct`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        const json = await response.json()
+        setProducts(json)
     }
-    return(
-        <ProductContext.Provider value={state}>
+
+    // Add Product
+
+    const addProduct = async (name, description, price, quantity, category, discount) => {
+        // TODO API CALL
+        const response = await fetch(`${host}/api/products/addproduct`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, description, price, quantity, category, discount })
+        });
+        const product = await response.json();
+        setProducts(products.concat(product))
+    }
+
+    // Delete Product
+    const deleteProduct = async (id) => {
+        const response = await fetch(`${host}/api/products/deleteproduct/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        const newProducts = products.filter((product) => { return product._id !== id })
+        setProducts(newProducts)
+    }
+
+    // Edit Product 
+    // API CALL
+    const editProduct = async (id, name, description, price, quantity, category, discount) => {
+        const response = await fetch(`${host}/api/products/updateproduct/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, description, price, quantity, category, discount })
+        });
+
+        // Logic to edit in client side
+
+        let newProducts = JSON.parse(JSON.stringify(products))
+
+        for (let index = 0; index < newProducts.length; index++) {
+            const element = products[index];
+            if (element._id == id) {
+                newProducts[index].name = name;
+                newProducts[index].description = description;
+                newProducts[index].price = price;
+                newProducts[index].quantity = quantity;
+                newProducts[index].category = category;
+                newProducts[index].discount = discount;
+                break;
+            }
+        }
+        setProducts(newProducts);
+    }
+
+    return (
+        <ProductContext.Provider value={{ products, getProduct, addProduct, deleteProduct, editProduct }}>
             {props.children}
         </ProductContext.Provider>
     )

@@ -16,27 +16,29 @@ import {
   Route
 } from "react-router-dom";
 import ProductState from './context/products/ProductState';
+import CartState from './context/products/CartState';
 
 function App() {
   return (
     <>
-      <ProductState>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="shop" element={<Shop />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="admin" element={<Admin />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="checkout" element={<Checkout />} />
-          </Routes>
-        </BrowserRouter>
-      </ProductState>
-
+      <CartState>
+        <ProductState>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="shop" element={<Shop />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="admin" element={<Admin />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="checkout" element={<Checkout />} />
+            </Routes>
+          </BrowserRouter>
+        </ProductState>
+      </CartState>
     </>
   );
 }

@@ -36,7 +36,7 @@ const Contact = () => {
                             <div className="col-md-6 col-sm-12  py-2">
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Message</label>
-                                    <textarea class="form-control height_100" id="" rows="8" placeholder='Write your message here...'></textarea>
+                                    <textarea className="form-control height_100" id="" rows="8" placeholder='Write your message here...'></textarea>
                                 </div>
 
                             </div>

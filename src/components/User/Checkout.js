@@ -10,7 +10,7 @@ const Checkout = () => {
                     <div className="col-md-8 px-2">
                         <h1 className='py-3 bg-dark text-white px-3 m-0 p-0'>1. SHIPPING</h1>
                         <div className="bg-gray m-0 p-3">
-                            <div className="bg-white">
+                            <div className="bg-white p-3 bor-radius">
                                 <form>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>

@@ -89,7 +89,7 @@ body {
 }
 
 .bg-gray{
-  background-color: #D3D3D3;
+  background-color: #EBECF0;
 }
 
 .Card {
@@ -105,12 +105,7 @@ body {
 .Card:hover .cardFooter {
   opacity: 1;
   visibility: visible;
-  margin-bottom: 10px;
   transform: translateY(0);
-}
-
-.Card:hover .cardBody {
-  margin-top: -20px;
 }
 
 .cardBody {
@@ -543,6 +538,48 @@ ul, li{
   color: white;
   opacity: 0.95;
 }
+
+#user-login{
+  display: none;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4e4d4d;
+  min-width: 110px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
 
 @media only screen and (max-width: 768px) {
   .media-center {

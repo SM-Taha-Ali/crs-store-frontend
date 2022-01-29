@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Footer from '../Footer';
 import Orders from './Orders';
 import Products from './Products';
+import productContext from '../../context/products/productContext';
+
 import Users from './Users';
 
 const Admin = () => {

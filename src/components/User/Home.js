@@ -1,14 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import '../../Stylesheets/App.css'
 import Accordion from './Accordion';
 import Card from './Card';
 import Footer from '../Footer';
 import Carousel from './Carousel';
 import productContext from '../../context/products/productContext';
+import cartContext from '../../context/products/cartContext';
+
 
 
 const Home = () => {
-    const state = useContext(productContext);
+    const context = useContext(productContext);
+    const { products, getProduct } = context
+    useEffect(() => {
+        getProduct()
+    }, [])
+    const context2 = useContext(cartContext);
+    let { cartItems, getCartItems, updateCartItems } = context2
+    useEffect(() => {
+        if (localStorage.getItem('token')){
+            getCartItems()
+        } else{
+            cartItems = []
+        }
+    }, [])
     return (
         <>
             <div className="not-main">
@@ -23,12 +38,9 @@ const Home = () => {
                                 <hr />
                             </div>
                             <div className="row g-0">
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                                {products.map((product) => {
+                                    return <Card key={product._id} product={product} />
+                                })}
                             </div>
 
                         </div>
@@ -63,13 +75,10 @@ const Home = () => {
                             <span className='hot_tag mt-2 py-2'>HOT DEALS</span>
                         </div>
                         <div className="col-xl-9 col-lg-12">
-                            <div className="row g-0">
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
-                                <div className="col-lg-4 col-md-6 p-2"><Card products={state} /></div>
+                            <div className="row">
+                                {products.map((product) => {
+                                    return <Card key={product._id} product={product} />
+                                })}
                             </div>
                         </div>
                     </div>

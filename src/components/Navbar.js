@@ -1,10 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
+import cartContext from '../context/products/cartContext';
 
 const Navbar = () => {
     let location = useLocation();
     useEffect(() => {
     }, [location]);
+
+    var admin = localStorage.getItem('user_role');
+
+    admin = JSON.parse(admin)
+    
+    const context = useContext(cartContext);
+    const { cartItems, getCartItems, updateCartItems } = context
+
+    useEffect(() => {
+        if (localStorage.getItem('token')){
+            getCartItems()
+        } 
+    }, [])
+
     return (
         <>
             <nav className="navbar navbar-expand-xl navbar-light bg-light px-1">
@@ -12,8 +27,8 @@ const Navbar = () => {
                 {/* <button className="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button> */}
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -29,8 +44,11 @@ const Navbar = () => {
                         <li className="nav-item px-1">
                             <Link className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} to="/contact">Contact Us</Link>
                         </li>
-                        <li className="nav-item px-1">
-                            <Link className={`nav-link ${location.pathname === "/admin" ? "active" : ""}`} to="/admin">Admin Panel</Link>
+                        <li className="nav-item px-1">   
+                            {admin ?
+                                <Link className={`nav-link ${location.pathname === "/admin" ? "active" : ""}`} to="/admin">Admin Panel</Link> :
+                                ""
+                            }
                         </li>
                     </ul>
                     <form className="d-flex">
@@ -45,7 +63,7 @@ const Navbar = () => {
                                 <i className="fas fa-shopping-cart"></i>
                             </span>
                             <span className='text-white ps-1'>
-                                0
+                                {cartItems.length}
                             </span>
                             <span className='text-white px-1'>
                                 item(s)
