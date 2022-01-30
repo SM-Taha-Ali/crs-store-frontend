@@ -26,6 +26,16 @@ const Login = () => {
         const json = await response.json();
         console.log(json);
 
+        const response2 = await fetch("http://localhost:5000/api/auth/getallusers", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const json2 = await response2.json();
+        localStorage.setItem("allUsers", JSON.stringify(json2));
+        console.log(json2)
+
         if (json.success) {
             localStorage.setItem('token', json.authToken)
             const response = await fetch("http://localhost:5000/api/auth/getuser", {
@@ -37,6 +47,7 @@ const Login = () => {
             const userDetails = await response.json();
             localStorage.setItem('user_name',userDetails.firstname)
             localStorage.setItem('user_role',userDetails.role)
+            localStorage.setItem('userDetails', userDetails)
             navigate('/')
         } else {
             alert('Invalid credentials')

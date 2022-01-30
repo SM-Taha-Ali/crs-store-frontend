@@ -158,7 +158,6 @@ const Products = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {console.log(products)}
                             {
                                 products.map((product, i)=>{
                                     return <ProductTr key={product._id} index={i} product={product} updateProduct = {updateProduct} />

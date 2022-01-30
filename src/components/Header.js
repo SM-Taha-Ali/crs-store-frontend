@@ -10,6 +10,7 @@ const Header = () => {
     const handleLogout = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('user_role')
+        localStorage.removeItem('allUsers')
         navigate('/login')
         window.location.reload()
     }

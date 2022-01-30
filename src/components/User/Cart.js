@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Footer from '../Footer';
 import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
@@ -52,8 +52,11 @@ const Cart = () => {
                     </div>
 
                     <div className="text-end py-5">
+                        <Link to="/shop">
+                            <button className="btn bg-Red text-white mx-1">CONTINUE SHOPPING</button>
+                        </Link>
                         <Link to="/checkout">
-                            <button className="btn bg-Red text-white">PROCEED TO CHECKOUT</button>
+                            <button className="btn bg-Red text-white mx-1">PROCEED TO CHECKOUT</button>
                         </Link>
                     </div>
 

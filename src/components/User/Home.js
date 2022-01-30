@@ -29,7 +29,7 @@ const Home = () => {
             <div className="not-main">
                 <Carousel />
             </div>
-            <div className="main">
+            <div className="contact-main">
                 <div className="container bg-white p-3">
                     <div className="row">
                         <div className="col-lg-9 col-md-12 col-sm-12">
