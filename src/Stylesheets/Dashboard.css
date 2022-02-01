@@ -1,69 +1,3 @@
-/* @import "../components/navbar/navbar-dropdowns.css";
-@import "../components/sidebar/sidebar-default.css"; */
-
-/*------------------------------------------------------------------
-# [Color codes]
-
-# teal: #00b5ad
-# olive: #b5cc18
-# violet: #6435c9
-# orange: #f2711c
-# darkgray: darkgray
-# blue: #2185d0
-# grey: #767676
-# */
-
-/*------------------------------------------------------------------
-[Typography]
-
-Body:           1em / "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
-Headers:        2em / "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
-parapgraph:     1em / "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
-
-Notes:  decreasing heading by 0.4em with every subsequent heading level
--------------------------------------------------------------------*/
-
-/*
-[1. Body / #body]
-*/
-/* @font-face {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 400;
-    font-display: auto;
-    src: url("../font/Lato-Regular.eot");
-    src: url("../font/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Regular.woff") format("woff"), url("../font/Lato-Regular.ttf") format("truetype");
-} */
-
-/* body,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6,
-p,
-a,
-td {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-} */
-
-/* body {
-    width: 100%;
-    height: 100%;
-    background: #f4f6fa;
-    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: #444;
-} */
-
 .wrapper {
     display: flex;
     width: 100%;
@@ -71,34 +5,6 @@ td {
     overflow-x: hidden
 }
 
-/* #body {
-    width: 100%;
-    padding: 0;
-    min-height: 100vh;
-    transition: all 0.3s;
-} */
-
-/*------------------------------------------------------------------
-[2. Header / #header]
-*/
-
-/*------------------------------------------------------------------
-[3. Navigation / #navbar] - see /components/navbar/navbar-dropdown.css
-*/
-/* .default-light-menu {
-    border: none !important;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset !important;
-    color: #fff;
-}
-
-.default-light-menu:hover {
-    background: #2196F3 !important;
-    color: #fff;
-} */
-
-/*------------------------------------------------------------------
-[4. Content / #content]
-*/
 #body>.content {
     position: relative;
     padding: .5rem;
@@ -131,13 +37,6 @@ td {
     line-height: 1.6;
 }
 
-/*------------------------------------------------------------------
-[5. Sidebar / #sidebar] - see /components/sidebar/sidebar-default.css
-*/
-
-/*------------------------------------------------------------------
-[6. Boxes / .box] 
-*/
 .box {
     position: relative;
     border-radius: 3px;
@@ -171,9 +70,6 @@ td {
     border-top-color: #22a1f9;
 }
 
-/*------------------------------------------------------------------
-[7. Dashboard Cards / .card] 
-*/
 .card {
     margin-bottom: 15px;
     box-shadow: rgba(35, 46, 60, .04) 0 2px 4px 0;
@@ -207,9 +103,6 @@ td {
     color: #a9a9a9;
 }
 
-/*------------------------------------------------------------------
-[8. Miscellaneous ] 
-*/
 .line {
     border-bottom: 1px solid #E0E0E0;
 }
@@ -253,9 +146,6 @@ td {
     background: #FAFAFA;
 }
 
-/*------------------------------------------------------------------
-[9. Adjustments to default behaviors] 
-*/
 a,
 a:hover,
 a:focus {
@@ -285,9 +175,7 @@ a:focus {
     margin-bottom: 1em;
 }
 
-/*------------------------------------------------------------------
-[10. Colors / .teal, .olive, .violet, .orange, .darkgray, .blue, .grey] 
-*/
+
 .teal {
     color: #00b5ad !important;
 }

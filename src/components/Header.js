@@ -17,8 +17,6 @@ const Header = () => {
 
     const local_name = localStorage.getItem('user_name')
 
-    console.log(local_name)
-
     const userName = `${local_name}`
 
     return (
@@ -55,8 +53,9 @@ const Header = () => {
                                         <div className="dropdown pe-2 ps-1 py-2 Border-right">
                                             <span className="dropbtn mx-2">{userName}</span>
                                             <div className="dropdown-content">
-                                                {/* <a href="#" ><i className="fal fa-cog"></i> Settings</a> */}
+                                                <Link to="/orders"><i className="far fa-shopping-bag mx-1"></i> Orders</Link>
                                                 <a href="#" onClick={handleLogout}><i className="far fa-sign-out mx-1"></i> Logout</a>
+                                                {/* <a href="#" ><i className="fal fa-cog"></i> Settings</a> */}
                                             </div>
                                         </div>
                                     </div>
@@ -92,6 +91,7 @@ const Header = () => {
                                             <div className="dropdown-content">
                                                 {/* <a href="#" ><i className="fal fa-cog"></i> Settings</a> */}
                                                 <a href="#" onClick={handleLogout}><i className="far fa-sign-out mx-1"></i> Logout</a>
+                                                <Link to="/orders"><i className="far fa-shopping-bag mx-1"></i> Orders</Link>
                                             </div>
                                         </div>
                                     </div>

@@ -55,7 +55,6 @@ const Users = () => {
                     <tbody>
                         {
                             allUsers.map((userDetail, i) => {
-                                console.log(userDetail)
                                 return <UserTr key={userDetail._id} index={i} userDetail={userDetail}/>
                             })
                         }

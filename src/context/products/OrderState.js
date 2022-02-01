@@ -22,6 +22,24 @@ const ProductState = (props) => {
         setOrders(json)
     }
 
+
+    // Place Order
+
+    const placeOrder = async (address, products, city, contact, postal_code, date) => {
+        // TODO API CALL
+        const response = await fetch(`${host}/api/orders/makeorder`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            },
+            body: JSON.stringify({ address, products, city, contact, postal_code, date})
+        });
+        const order = await response.json();
+        setOrders(orders.concat(order))
+        return order._id
+    }
+
     //  Update Quantity
 
     const updateOrder = async (id, status) => {
@@ -61,7 +79,7 @@ const ProductState = (props) => {
     }
 
     return (
-        <OrderContext.Provider value={{ orders, getOrders, updateOrder, deleteOrder }}>
+        <OrderContext.Provider value={{ orders, getOrders, updateOrder, deleteOrder, placeOrder }}>
             {props.children}
         </OrderContext.Provider>
     )

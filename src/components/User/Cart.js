@@ -1,19 +1,29 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Footer from '../Footer';
 import Carousel from './Carousel';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import cartContext from '../../context/products/cartContext';
 import CartTr from './CartTr';
 
 const Cart = () => {
+    const navigate = useNavigate();
 
     const context = useContext(cartContext);
     const { cartItems, getCartItems, updateCartItem, deleteItem } = context
 
+    const [cartEmpty, setcartEmpty] = useState(false);
+
+    const checkOut = ()=>{
+        navigate("/checkout")
+    }
+
     useEffect(() => {
-        if (localStorage.getItem('token')){
+        if (localStorage.getItem('token')) {
             getCartItems()
-        } 
+        }
+        if (cartItems.length == 0){
+            setcartEmpty(true)
+        }
     }, [])
 
     return (
@@ -22,7 +32,7 @@ const Cart = () => {
                 <Carousel />
             </div>
             <div className="contact-main rounded">
-                <div className="container bg-white p-4">
+                <div className="container bg-white p-4 Rounded">
                     <h1 className="text-center text-Red">
                         YOUR CART
                     </h1>
@@ -46,7 +56,7 @@ const Cart = () => {
                                 }
                             </tbody>
                             <tfoot>
-                                
+
                             </tfoot>
                         </table>
                     </div>
@@ -55,14 +65,12 @@ const Cart = () => {
                         <Link to="/shop">
                             <button className="btn bg-Red text-white mx-1">CONTINUE SHOPPING</button>
                         </Link>
-                        <Link to="/checkout">
-                            <button className="btn bg-Red text-white mx-1">PROCEED TO CHECKOUT</button>
-                        </Link>
+                            <button className="btn bg-Red text-white mx-1" disabled={cartEmpty} onClick={checkOut}>PROCEED TO CHECKOUT</button>
                     </div>
 
                 </div>
-                <Footer />
             </div>
+            <Footer />
         </>
     )
 };

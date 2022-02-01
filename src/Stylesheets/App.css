@@ -114,6 +114,7 @@ body {
   flex-direction: row;
   position: relative;
   padding-top: 5px;
+  padding-bottom: 10px;
   margin-top: 10px;
   transition: all .4s ease-in-out;
 }

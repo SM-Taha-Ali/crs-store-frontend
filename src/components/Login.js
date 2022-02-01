@@ -47,7 +47,7 @@ const Login = () => {
             const userDetails = await response.json();
             localStorage.setItem('user_name',userDetails.firstname)
             localStorage.setItem('user_role',userDetails.role)
-            localStorage.setItem('userDetails', userDetails)
+            localStorage.setItem('userDetails', JSON.stringify(userDetails))
             navigate('/')
         } else {
             alert('Invalid credentials')

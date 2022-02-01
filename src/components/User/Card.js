@@ -41,7 +41,7 @@ const Card = (props) => {
                                 <span className="fa fa-star"></span>
                             </div>
                         </div>
-                        <div className='priceTag'>{product.price}</div>
+                        <div className='priceTag'>{product.price}Rs</div>
                     </div>
                     <div className="cardFooter">
                         <div className='cartIcon' onClick={()=>{addToCart()}} ><i className="fas fa-cart-arrow-down"></i></div>

@@ -64,8 +64,22 @@ const ProductState = (props) => {
         setCartItems(newCartItems)
     }
 
+    // Empty Cart
+
+    const emptyCart = async (id) => {
+        const response = await fetch(`${host}/api/cart/emptycart`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem('token')
+            },
+        });
+        const newCartItems = cartItems.filter((cartItem) => { return cartItem.user !== id })
+        setCartItems(newCartItems)
+    }
+
     return (
-        <CartContext.Provider value={{ cartItems, getCartItems, updateCartItem, deleteItem }}>
+        <CartContext.Provider value={{ cartItems, getCartItems, updateCartItem, deleteItem, emptyCart }}>
             {props.children}
         </CartContext.Provider>
     )
