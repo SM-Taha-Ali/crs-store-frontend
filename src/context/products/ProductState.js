@@ -24,14 +24,14 @@ const ProductState = (props) => {
 
     // Add Product
 
-    const addProduct = async (name, description, price, quantity, category, discount) => {
+    const addProduct = async (name, description, price, quantity, category, discount, img) => {
         // TODO API CALL
         const response = await fetch(`${host}/api/products/addproduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, description, price, quantity, category, discount })
+            body: JSON.stringify({ name, description, price, quantity, category, discount, img })
         });
         const product = await response.json();
         setProducts(products.concat(product))

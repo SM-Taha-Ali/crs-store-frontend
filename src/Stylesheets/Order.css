@@ -127,3 +127,23 @@
 .delivered::after{
     content: '';
 }
+
+.Order_Status_Btn{
+    padding: 10px 30px;
+}
+
+.Check{
+    background-color: #7ad37aa2;
+}
+
+.Check:hover{
+    background-color: #91e99165;
+}
+
+.Wrong{
+    background-color: #ec6a5ca2;
+}
+
+.Wrong:hover{
+    background-color: #ee776a63;
+}

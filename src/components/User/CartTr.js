@@ -13,10 +13,12 @@ const CartTr = (props) => {
     }
 
     const updateQuantity = () => {
+        console.log('hello')
         updateCartItem(cartItem._id, cartItemQuantity.quantity)
     }
 
     const delItem = () => {
+        console.log('hello')
         deleteItem(cartItem._id)
     }
 
@@ -33,7 +35,7 @@ const CartTr = (props) => {
             </td>
             <td>{cartItem.price*cartItem.quantity}</td>
             <td className='text-center'>
-                <button className="btn btn-orange" onClick={delItem}><i className="far fa-trash-alt text-white"></i></button>
+                <span className="btn btn-orange" onClick={delItem}><i className="far fa-trash-alt text-white"></i></span>
             </td>
         </tr>
     )

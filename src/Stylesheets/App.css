@@ -92,6 +92,22 @@ body {
   background-color: #EBECF0;
 }
 
+.MainCarousel{
+  z-index: -1;
+}
+
+.img_upload{
+  display: none;
+}
+
+.img_upload_btn{
+  padding: 10px 25px;
+  background-color: #E14938;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
 .Card {
   display: flex;
   flex-direction: column;
@@ -463,6 +479,10 @@ ul, li{
 
 .height_100{
   min-height: 100%;
+}
+
+.our_products{
+  cursor: pointer;
 }
 
 .sidenav {

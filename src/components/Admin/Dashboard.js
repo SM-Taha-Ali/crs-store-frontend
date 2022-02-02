@@ -1,9 +1,15 @@
 import '../../Stylesheets/Dashboard.css'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, BarChart, Bar} from 'recharts';
-
+import orderContext from '../../context/products/orderContext';
 
 const Dashboard = () => {
+    const contextOrder = useContext(orderContext);
+    const { orders, getOrders, updateOrder } = contextOrder
+    useEffect(() => {
+        getOrders()
+    }, [])
+
     const trafficData = [
         {
             month: "Jan",
@@ -83,7 +89,7 @@ const Dashboard = () => {
                                     <div className="col-sm-8">
                                         <div className="detail">
                                             <p className="detail-subtitle">New Orders</p>
-                                            <span className="number">6,267</span>
+                                            <span className="number">{orders.length}</span>
                                         </div>
                                     </div>
                                 </div>

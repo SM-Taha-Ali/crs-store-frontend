@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../../Stylesheets/App.css'
 import Accordion from './Accordion';
 import Card from './Card';
@@ -24,6 +24,48 @@ const Home = () => {
             cartItems = []
         }
     }, [])
+
+    const [filterProducts, setFilterProducts] = useState(products);
+
+    useEffect(() => {
+        setFilterProducts(filterProducts => products)
+    }, [products])
+
+
+    const filter = (e) => {
+        if (e.target.value == 0) {
+            setFilterProducts(filterProducts => products)
+            console.log('working')
+        }
+        if (e.target.value == 1) {
+            let newfilterProducts = products.filter((product) => { return product.category == "Game" })
+            setFilterProducts(newfilterProducts)
+        }
+        if (e.target.value == 2) {
+            let newfilterProducts = products.filter((product) => { return product.category == "Processor" })
+            setFilterProducts(newfilterProducts)
+        }
+        if (e.target.value == 3) {
+            let newfilterProducts = products.filter((product) => { return product.category == "Graphics Card" })
+            setFilterProducts(newfilterProducts)
+        }
+        if (e.target.value == 4) {
+            let newfilterProducts = products.filter((product) => { return product.category == "Keyboard" })
+            setFilterProducts(newfilterProducts)
+        }
+        if (e.target.value == 5) {
+            let newfilterProducts = products.filter((product) => { return product.category == "Mouse" })
+            setFilterProducts(newfilterProducts)
+        }
+        if (e.target.value == 6) {
+            let newfilterProducts = products.filter((product) => { return product.category == "Casing" })
+            setFilterProducts(newfilterProducts)
+        }
+        if (e.target.value == 7) {
+            let newfilterProducts = products.filter((product) => { return product.category == "PC Build" })
+            setFilterProducts(newfilterProducts)
+        }
+    }
     return (
         <>
             <div className="not-main">
@@ -38,7 +80,7 @@ const Home = () => {
                                 <hr />
                             </div>
                             <div className="row g-0">
-                                {products.map((product) => {
+                                {products.slice(0,6).map((product, i) => {
                                     return <Card key={product._id} product={product} />
                                 })}
                             </div>
@@ -61,12 +103,12 @@ const Home = () => {
                     <div className='media_products_responsive'>
                         <h4 className='ms-3'>OUR PRODUCTS</h4>
                         <div className="second-header row">
-                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">ALL</div>
-                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">PC and Mac</div>
-                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">PLAYSTATION</div>
-                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">TABLETS</div>
-                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">WII</div>
-                            <div className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2">XBOX</div>
+                            <li className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2" onClick={(e) => filter(e)} value={0}>ALL</li>
+                            <li className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2" onClick={(e) => filter(e)} value={1}>GAMES</li>
+                            <li className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2" onClick={(e) => filter(e)} value={2}>PROCESSOR</li>
+                            <li className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2" onClick={(e) => filter(e)} value={3}>GRAPHICS CARD</li>
+                            <li className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2" onClick={(e) => filter(e)} value={6}>CASING</li>
+                            <li className="border our_products col-lg-2 col-md-6 col-sm-12 py-2 px-2" onClick={(e) => filter(e)} value={7}>PC BUILD</li>
                         </div>
                     </div>
                     <hr className='colorDefault' />
@@ -76,7 +118,7 @@ const Home = () => {
                         </div>
                         <div className="col-xl-9 col-lg-12">
                             <div className="row">
-                                {products.map((product) => {
+                                {filterProducts.slice(0,9).map((product) => {
                                     return <Card key={product._id} product={product} />
                                 })}
                             </div>

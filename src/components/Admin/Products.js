@@ -13,7 +13,7 @@ const Products = () => {
 
     const ref = useRef(null)
 
-    const [product, setProduct] = useState({ name: "", description: "", price: "", quantity: "", category: "", discount: "" })
+    const [product, setProduct] = useState({ name: "", description: "", price: "", quantity: "", category: "", discount: "", img:"" })
 
     const onChange = (e) => {
         setProduct({ ...product, [e.target.name]: e.target.value })
@@ -21,7 +21,7 @@ const Products = () => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        addProduct(product.name, product.description, product.price, product.quantity, product.category, product.discount)
+        addProduct(product.name, product.description, product.price, product.quantity, product.category, product.discount, product.img)
         var nameInp = document.getElementById("product_name")
         var quantityInp = document.getElementById("product_quantity")
         var priceInp = document.getElementById("product_price")
@@ -122,6 +122,11 @@ const Products = () => {
                                 <label htmlFor="exampleInputEmail1" className="form-label">Price <span className="text-Red">*</span></label>
                                 <input type="number" className="form-control" id="product_price" name='price' required onChange={onChange} />
                             </div>
+                            <div className="mb-3">
+                                <label htmlFor="exampleInputEmail1" className="form-label">Image Url <span className="text-Red">*</span></label>
+                                <input type="text" className="form-control" id="product_price" name='img' required onChange={onChange} />
+                            </div>
+
                         </div>
                         <div className="col-md-6 col-sm-12  py-2">
                             <div className="mb-3">
@@ -136,7 +141,6 @@ const Products = () => {
                                 <label htmlFor="exampleInputPassword1" className="form-label">Category <span className="text-Red">*</span></label>
                                 <input type="text" className="form-control" id="product_category" name='category' required onChange={onChange} />
                             </div>
-
                         </div>
                     </div>
 
@@ -159,8 +163,8 @@ const Products = () => {
                         </thead>
                         <tbody>
                             {
-                                products.map((product, i)=>{
-                                    return <ProductTr key={product._id} index={i} product={product} updateProduct = {updateProduct} />
+                                products.map((product, i) => {
+                                    return <ProductTr key={product._id} index={i} product={product} updateProduct={updateProduct} />
                                 })
                             }
                         </tbody>

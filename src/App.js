@@ -21,6 +21,7 @@ import CartState from './context/products/CartState';
 import OrderState from './context/products/OrderState';
 import PaymentState from './context/products/PaymentState';
 import UserState from './context/products/UserState';
+import ProductDesc from './components/User/ProductDesc';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
                     <Route path="cart" element={<Cart />} />
                     <Route path="checkout" element={<Checkout />} />
                     <Route path="orders" element={<Orderuser />} />
+                    <Route path="productdesc" element={<ProductDesc />} />
                   </Routes>
                 </BrowserRouter>
               </ProductState>

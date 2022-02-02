@@ -7,7 +7,7 @@ import OrderTr from './OrderTr';
 
 const Orders = () => {
     const contextOrder = useContext(orderContext);
-    const { orders, getOrders, updateOrder } = contextOrder
+    const { orders, getOrders, updateOrder, deleteOrder } = contextOrder
     useEffect(() => {
         getOrders()
     }, [])
@@ -37,7 +37,7 @@ const Orders = () => {
                     <div className="row g-0">
                         {
                             orders.map((order, i) => {
-                                return <OrderTr key={order._id} index={i} order={order} user_id={order.user} allUsers={allUsers} products={products} updateOrder={updateOrder} cartItems={cartItems} />
+                                return <OrderTr key={order._id} index={i} order={order} user_id={order.user} allUsers={allUsers} products={products} updateOrder={updateOrder} cartItems={cartItems} deleteOrder={deleteOrder} />
                             })
                         }
                     </div>
