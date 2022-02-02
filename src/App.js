@@ -20,12 +20,15 @@ import ProductState from './context/products/ProductState';
 import CartState from './context/products/CartState';
 import OrderState from './context/products/OrderState';
 import PaymentState from './context/products/PaymentState';
+import WishState from './context/products/WishState';
 import UserState from './context/products/UserState';
 import ProductDesc from './components/User/ProductDesc';
+import Wishlist from './components/User/Wishlist';
 
 function App() {
   return (
     <>
+      <WishState>
       <UserState>
         <PaymentState>
           <OrderState>
@@ -45,6 +48,7 @@ function App() {
                     <Route path="checkout" element={<Checkout />} />
                     <Route path="orders" element={<Orderuser />} />
                     <Route path="productdesc" element={<ProductDesc />} />
+                    <Route path="wishlist" element={<Wishlist />} />
                   </Routes>
                 </BrowserRouter>
               </ProductState>
@@ -52,6 +56,7 @@ function App() {
           </OrderState>
         </PaymentState>
       </UserState>
+      </WishState>
 
     </>
   );

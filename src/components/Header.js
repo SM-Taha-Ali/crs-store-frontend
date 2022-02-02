@@ -54,7 +54,7 @@ const Header = () => {
                                             <span className="dropbtn mx-2">{userName}</span>
                                             <div className="dropdown-content">
                                                 <Link to="/orders"><i className="far fa-shopping-bag mx-1"></i> Orders</Link>
-                                                <Link to="/wishlist"><i class="far fa-heart mx-1"></i>Wishlist</Link>
+                                                <Link to="/wishlist"><i className="far fa-heart mx-1"></i>Wishlist</Link>
                                                 <a href="#" onClick={handleLogout}><i className="far fa-sign-out mx-1"></i> Logout</a>
                                             </div>
                                         </div>

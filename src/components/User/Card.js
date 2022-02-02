@@ -1,7 +1,8 @@
 import React, { useEffect, useContext } from 'react'
 import '../../Stylesheets/App.css'
 import cartContext from '../../context/products/cartContext';
-import { useNavigate } from 'react-router-dom';
+import wishContext from '../../context/products/wishContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Card = (props) => {
     const { product } = props
@@ -12,8 +13,11 @@ const Card = (props) => {
 
     const { getCartItems } = context
 
+    const contextWish = useContext(wishContext)
+
+    const { getWishList, addToWish } = contextWish
+
     const addToCart = async () => {
-        console.log(product._id);
         if (localStorage.getItem('token')) {
             const response = await fetch(`http://localhost:5000/api/cart/addtocart/${product._id}`, {
                 method: 'POST',
@@ -32,12 +36,12 @@ const Card = (props) => {
         }
     }
 
-    const preview = () => {
+    const preview = (id) => {
         navigate('/productdesc')
     }
 
     const addToWishList = () => {
-        console.log("added to wish list")
+        addToWish(product._id, product.name, product.price)
     }
 
     return (
@@ -62,7 +66,15 @@ const Card = (props) => {
                         <div className='cartIcon' onClick={() => { addToCart() }} ><i className="fas fa-cart-arrow-down"></i></div>
                         <div className='cartIcon'><i className="fas fa-random"></i></div>
                         <div className='cartIcon' onClick={() => { addToWishList() }} ><i className="fas fa-heart"></i></div>
-                        <div className='cartIcon' onClick={() => { preview() }}><i className="fas fa-eye"></i></div>
+                        {/* <div className='cartIcon' onClick={() => { preview(product._id) }}><i className="fas fa-eye"></i></div> */}
+                        <Link
+                            to='/productdesc'
+                            state={{id:product._id ,name:product.name, price:product.price, img:product.img, desc:product.description}}
+                            className='cartIcon'
+                        >
+                            <i className="fas fa-eye"></i>
+                        </Link>
+                        {console.log(product.description)}
                     </div>
                 </div>
             </div>

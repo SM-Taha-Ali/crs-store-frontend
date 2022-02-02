@@ -7,13 +7,13 @@ const Carousel = () => {
             <div id="carouselExampleControls" className="carousel slide carousel-ht" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="http://demo.ariestheme.com/themes/sm_igame/media/wysiwyg/slideshow/home-default/slider2-home.png?filmoretime=1641711608536" className="d-block w-100" alt="..." />
+                        <img src="https://i.pinimg.com/originals/49/1e/1e/491e1ead668a27500556d68dd7a3c86b.jpg" style={{width:"100%"}} alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="http://demo.ariestheme.com/themes/sm_igame/media/wysiwyg/slideshow/home-default/slider1-home-1.png?filmoretime=1641711608536" className="d-block w-100" alt="..." />
+                        <img src="https://i.pinimg.com/originals/49/1e/1e/491e1ead668a27500556d68dd7a3c86b.jpg" style={{width:"100%"}} alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="http://demo.ariestheme.com/themes/sm_igame/media/wysiwyg/slideshow/home-default/slider3-home-1.png?filmoretime=1641711608537" className="d-block w-100" alt="..." />
+                        <img src="https://i.pinimg.com/originals/49/1e/1e/491e1ead668a27500556d68dd7a3c86b.jpg" style={{width:"100%"}} alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev d-none" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

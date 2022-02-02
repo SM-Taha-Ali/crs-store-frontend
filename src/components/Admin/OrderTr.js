@@ -86,10 +86,10 @@ const OrderTr = (props) => {
                 </div>
                 <div className='d-flex flex-row justify-content-between w-100 pt-4'>
                     <div>
-                        <button className='btn Order_Status_Btn Wrong mx-2' onClick={(e) => activeFire(e)} value={4}><i class="fal fa-times text-Red"></i></button>
+                        <button className='btn Order_Status_Btn Wrong mx-2' onClick={(e) => activeFire(e)} value={4}><i className="fal fa-times text-Red"></i></button>
                     </div>
                     <div className=''>
-                        <button className='btn Order_Status_Btn Check mx-2' onClick={(e) => activeFire(e)} value={5}><i class="far fa-check text-success"></i></button>
+                        <button className='btn Order_Status_Btn Check mx-2' onClick={(e) => activeFire(e)} value={5}><i className="far fa-check text-success"></i></button>
                     </div>
                 </div>
             </div>
