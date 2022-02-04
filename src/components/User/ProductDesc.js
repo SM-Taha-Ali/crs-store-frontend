@@ -12,7 +12,6 @@ const ProductDesc = () => {
     const price = location.state.price
     const img = location.state.img
     const desc = location.state.desc
-    console.log(desc)
     return <div>
         <div className="not-main">
             <Carousel />

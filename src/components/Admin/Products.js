@@ -6,7 +6,7 @@ import Card from '../User/Card';
 
 const Products = () => {
     const context = useContext(productContext);
-    const { products, getProduct, addProduct, editProduct } = context
+    const { products, getProduct, addProduct, editProduct, filterProducts, setFilterProducts } = context
     useEffect(() => {
         getProduct()
     }, [])

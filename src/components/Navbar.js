@@ -1,5 +1,6 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { Link, useLocation } from "react-router-dom";
+import productContext from '../context/products/productContext';
 import cartContext from '../context/products/cartContext';
 
 const Navbar = () => {
@@ -10,15 +11,46 @@ const Navbar = () => {
     var admin = localStorage.getItem('user_role');
 
     admin = JSON.parse(admin)
-    
+
     const context = useContext(cartContext);
     const { cartItems, getCartItems, updateCartItems } = context
 
     useEffect(() => {
-        if (localStorage.getItem('token')){
+        if (localStorage.getItem('token')) {
             getCartItems()
-        } 
+        }
     }, [])
+
+    const contextPro = useContext(productContext);
+    const { products, getProduct,  filterProducts, setFilterProducts } = contextPro
+    useEffect(() => {
+        getProduct()
+    }, [])
+
+    const [searchInputs, setSearchInputs] = useState();
+
+    const onChange = (e) => {
+        setSearchInputs({ ...searchInputs, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        searchProducts()
+    }
+
+    const searchProducts = async () => {
+        if (location.pathname == "/" || location.pathname == "/shop") {
+            if ((searchInputs.srchInp).length != 0) {
+                let newfilterProducts = products.filter((product) => { return (product.name).toString().toLowerCase().indexOf((searchInputs.srchInp).toLowerCase()) > -1 })
+                setFilterProducts(newfilterProducts)
+            } else {
+                setFilterProducts(products)
+            }
+        } else if (location.pathname == "/admin") {
+            let newfilterProducts = products.filter((product) => { return (product.name).toString().toLowerCase().indexOf((searchInputs.srchInp).toLowerCase()) > -1 })
+            setFilterProducts(newfilterProducts)
+        }
+    }
 
     return (
         <>
@@ -44,17 +76,17 @@ const Navbar = () => {
                         <li className="nav-item px-1">
                             <Link className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} to="/contact">Contact Us</Link>
                         </li>
-                        <li className="nav-item px-1">   
+                        <li className="nav-item px-1">
                             {admin ?
                                 <Link className={`nav-link ${location.pathname === "/admin" ? "active" : ""}`} to="/admin">Admin Panel</Link> :
                                 ""
                             }
                         </li>
                     </ul>
-                    <form className="d-flex">
+                    <form className="d-flex" onSubmit={handleSubmit}>
                         <div className="input-group">
-                            <input type="text" className="form-control" placeholder="Search here..." aria-label="Search here..." aria-describedby="button-addon2" />
-                            <button className="btn bg-Red text-white" type="button" id="button-addon2"><i className="fas fa-search"></i></button>
+                            <input type="text" className="form-control" placeholder="Search here..." id='searchbar' name='srchInp' onChange={onChange} />
+                            <button className="btn bg-Red text-white" id="button-addon2" onClick={() => searchProducts()}><i className="fas fa-search"></i></button>
                         </div>
                     </form>
                     <Link to="/cart">

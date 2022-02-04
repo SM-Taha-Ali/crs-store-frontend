@@ -16,3 +16,14 @@
     color: #E14938;
     cursor: pointer;
 }
+
+.active-category{
+    color: #E14938;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.active-category-home-wali{
+    background-color: #E14938;
+    color: white;
+}

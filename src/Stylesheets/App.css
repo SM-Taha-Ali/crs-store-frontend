@@ -358,6 +358,10 @@ a {
   margin: auto;
 }
 
+
+.our_products{
+  cursor: pointer;
+}
 .our_products:hover{
   background-color: #E14938;
   color: white;
@@ -390,6 +394,11 @@ ul, li{
   width: 80%;
   margin: auto;
   background-color: #E14938;
+}
+
+.footerMain{
+  position: relative;
+  bottom: 0px;
 }
 
 .flex-width{
@@ -667,7 +676,7 @@ ul, li{
   }
 
   .contact-main {
-    margin-top: -175px;
+    margin-top: 0;
   }
 
   .login-card{
@@ -689,7 +698,7 @@ ul, li{
   }
 
   .contact-main {
-    margin-top: -350px;
+    margin-top: 0;
   }
   
 }
@@ -725,7 +734,7 @@ ul, li{
   }
 
   .contact-main {
-    margin-top: -60px;
+    margin-top: 0px;
   }
 
   .login-card{

@@ -23,7 +23,6 @@ const DescCard = (props) => {
                 body: JSON.stringify({ quantity: 1, price: product_price, name: product_name })
             });
             const json = await response.json();
-            console.log(json);
 
             getCartItems()
         } else {

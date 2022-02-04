@@ -5,7 +5,7 @@ import wishContext from '../../context/products/wishContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Card = (props) => {
-    const { product } = props
+    const { product, setShow } = props
 
     const navigate = useNavigate();
 
@@ -29,8 +29,8 @@ const Card = (props) => {
             });
             const json = await response.json();
             console.log(json);
-
             getCartItems()
+            setShow(true)
         } else {
             navigate('/login')
         }
@@ -74,7 +74,6 @@ const Card = (props) => {
                         >
                             <i className="fas fa-eye"></i>
                         </Link>
-                        {console.log(product.description)}
                     </div>
                 </div>
             </div>

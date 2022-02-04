@@ -7,6 +7,7 @@ const ProductState = (props) => {
 
     const productsInitial = [ ]
     const [products, setProducts] = useState(productsInitial)
+    const [filterProducts, setFilterProducts] = useState(products)
 
     // Get Products
 
@@ -19,7 +20,9 @@ const ProductState = (props) => {
             },
         });
         const json = await response.json()
+        console.log(json)
         setProducts(json)
+        console.log(products)
     }
 
     // Add Product
@@ -81,7 +84,7 @@ const ProductState = (props) => {
     }
 
     return (
-        <ProductContext.Provider value={{ products, getProduct, addProduct, deleteProduct, editProduct }}>
+        <ProductContext.Provider value={{ products, setProducts, getProduct, addProduct, deleteProduct, editProduct, filterProducts, setFilterProducts  }}>
             {props.children}
         </ProductContext.Provider>
     )

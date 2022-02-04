@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
 import Footer from './Footer'
+import '../Stylesheets/Loader.css'
 import Carousel from './User/Carousel';
 import { Link, useNavigate } from "react-router-dom";
+import { TailSpin } from "react-loader-spinner";
+
 
 const Login = () => {
+    const [Loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -15,7 +19,8 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault()
-
+        
+        setLoading(true)
         const response = await fetch("http://localhost:5000/api/auth/login", {
             method: 'POST',
             headers: {
@@ -24,6 +29,7 @@ const Login = () => {
             body: JSON.stringify({ email: credentials.email, password: credentials.password })
         });
         const json = await response.json();
+        // setLoading(false)
         console.log(json);
 
         const response2 = await fetch("http://localhost:5000/api/auth/getallusers", {
@@ -45,8 +51,8 @@ const Login = () => {
                 }
             });
             const userDetails = await response.json();
-            localStorage.setItem('user_name',userDetails.firstname)
-            localStorage.setItem('user_role',userDetails.role)
+            localStorage.setItem('user_name', userDetails.firstname)
+            localStorage.setItem('user_role', userDetails.role)
             localStorage.setItem('userDetails', JSON.stringify(userDetails))
             navigate('/')
         } else {
@@ -57,6 +63,7 @@ const Login = () => {
 
     return (
         <>
+           
             <div className="not-main">
                 <Carousel />
             </div>

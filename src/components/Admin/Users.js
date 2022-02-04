@@ -21,7 +21,7 @@ const Users = () => {
                             <th scope="col">Email</th>
                             <th scope="col">Phone No</th>
                             <th scope="col">Role</th>
-                            {/* <th scope="col" className='text-center'>Action</th> */}
+                            <th scope="col" className='text-center'>Action</th>
                         </tr>
                     </thead>
                     <tbody>

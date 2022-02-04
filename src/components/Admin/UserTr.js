@@ -9,12 +9,12 @@ const UserTr = (props) => {
         <td>{userDetail.email}</td>
         <td>{userDetail.phoneno}</td>
         <td>{userDetail.role ? "Admin" : "User"}</td>
-        {/* <td className='text-center'>
+        <td className='text-center'>
             {
                 userDetail.role ? "" : 
                 <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="far fa-ban text-Red"></i></button>
             }
-        </td> */}
+        </td>
     </tr>;
 };
 
