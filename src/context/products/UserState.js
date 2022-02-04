@@ -23,10 +23,33 @@ const ProductState = (props) => {
         setUser(json)
     }
 
+    const updateUser = async (id, status, role) => {
+        const response = await fetch(`${host}/api/auth/updateuser`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id, status,  role })
+        });
+
+        // Logic to edit in client side
+
+        let newUser = JSON.parse(JSON.stringify(user))
+
+        for (let index = 0; index < newUser.length; index++) {
+            const element = user[index];
+            if (element._id == id) {
+                newUser[index].status = status;
+                newUser[index].role = role;
+                break;
+            }
+        }
+        setUser(newUser);
+    }
 
 
     return (
-        <UserContext.Provider value={{ user, getUserById }}>
+        <UserContext.Provider value={{ user, getUserById, updateUser }}>
             {props.children}
         </UserContext.Provider>
     )

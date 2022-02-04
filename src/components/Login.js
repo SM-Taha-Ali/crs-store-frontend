@@ -42,7 +42,7 @@ const Login = () => {
         localStorage.setItem("allUsers", JSON.stringify(json2));
         console.log(json2)
 
-        if (json.success) {
+        if (json.success && json.user_status) {
             localStorage.setItem('token', json.authToken)
             const response = await fetch("http://localhost:5000/api/auth/getuser", {
                 method: 'GET',

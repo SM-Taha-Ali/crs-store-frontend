@@ -105,7 +105,7 @@ const Home = () => {
                             {/* Displaying Cards */}
                             <div className="row g-0">
                                 {
-                                    filterProducts.slice(0, 6).map((product, i) => {
+                                    products.slice(0, 6).map((product, i) => {
                                         return <Card key={product._id} product={product} setShow={setShow} />
                                     })
                                 }
