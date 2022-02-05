@@ -20,7 +20,7 @@ const ProductState = (props) => {
             body: JSON.stringify({ user_id })
         });
         const json = await response.json()
-        setUser(json)
+        return json
     }
 
     const updateUser = async (id, status, role) => {
@@ -47,9 +47,20 @@ const ProductState = (props) => {
         setUser(newUser);
     }
 
+    const getallusers = async () => {
+        const response = await fetch("http://localhost:5000/api/auth/getallusers", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const json = await response.json();
+        setUser(json);
+    }
+
 
     return (
-        <UserContext.Provider value={{ user, getUserById, updateUser }}>
+        <UserContext.Provider value={{ user, getUserById, updateUser, getallusers }}>
             {props.children}
         </UserContext.Provider>
     )

@@ -11,6 +11,10 @@ const Products = () => {
         getProduct()
     }, [])
 
+    // useEffect(() => {
+    //     setFilterProducts(filterProducts => products)
+    // } [products])
+
     const ref = useRef(null)
 
     const [product, setProduct] = useState({ name: "", description: "", price: "", quantity: "", category: "", discount: "", img:"" })

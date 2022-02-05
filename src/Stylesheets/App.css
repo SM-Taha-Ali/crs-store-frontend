@@ -154,6 +154,8 @@ body {
 }
 
 .cartIcon {
+  background-color: white;
+  outline: none;
   border: 1px solid lightgray;
   padding: 5px 10px;
 }
@@ -358,6 +360,9 @@ a {
   margin: auto;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
 
 .our_products{
   cursor: pointer;

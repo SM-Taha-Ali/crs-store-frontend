@@ -5,13 +5,21 @@ import wishContext from '../../context/products/wishContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Card = (props) => {
-    const { product, setShow } = props
+    const { product, setShow, setLoader } = props
 
     const navigate = useNavigate();
 
     const context = useContext(cartContext)
 
-    const { getCartItems } = context
+    const { cartItems, getCartItems } = context
+
+    var disableBtn = false
+
+    cartItems.forEach(item => {
+        if(item.product == product._id ){
+            disableBtn = true
+        }
+    });
 
     const contextWish = useContext(wishContext)
 
@@ -19,6 +27,7 @@ const Card = (props) => {
 
     const addToCart = async () => {
         if (localStorage.getItem('token')) {
+            // setLoader(true)
             const response = await fetch(`http://localhost:5000/api/cart/addtocart/${product._id}`, {
                 method: 'POST',
                 headers: {
@@ -29,15 +38,15 @@ const Card = (props) => {
             });
             const json = await response.json();
             console.log(json);
-            getCartItems()
+            await getCartItems()
             setShow(true)
+            setTimeout(() => {
+                setShow(false)
+            }, 2000);
+
         } else {
             navigate('/login')
         }
-    }
-
-    const preview = (id) => {
-        navigate('/productdesc')
     }
 
     const addToWishList = () => {
@@ -63,13 +72,13 @@ const Card = (props) => {
                         <div className='priceTag'>{product.price}Rs</div>
                     </div>
                     <div className="cardFooter">
-                        <div className='cartIcon' onClick={() => { addToCart() }} ><i className="fas fa-cart-arrow-down"></i></div>
+                        <button className='cartIcon' disabled={disableBtn} onClick={() => { addToCart() }} ><i className="fas fa-cart-arrow-down"></i></button>
                         <div className='cartIcon'><i className="fas fa-random"></i></div>
                         <div className='cartIcon' onClick={() => { addToWishList() }} ><i className="fas fa-heart"></i></div>
                         {/* <div className='cartIcon' onClick={() => { preview(product._id) }}><i className="fas fa-eye"></i></div> */}
                         <Link
                             to='/productdesc'
-                            state={{id:product._id ,name:product.name, price:product.price, img:product.img, desc:product.description}}
+                            state={{ id: product._id, name: product.name, price: product.price, img: product.img, desc: product.description }}
                             className='cartIcon'
                         >
                             <i className="fas fa-eye"></i>

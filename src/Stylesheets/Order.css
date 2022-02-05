@@ -147,3 +147,20 @@
 .Wrong:hover{
     background-color: #ee776a63;
 }
+
+.mail-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.mail-card-body{
+    border: 1px solid #333333;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+}

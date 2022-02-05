@@ -20,9 +20,7 @@ const ProductState = (props) => {
             },
         });
         const json = await response.json()
-        console.log(json)
         setProducts(json)
-        console.log(products)
     }
 
     // Add Product

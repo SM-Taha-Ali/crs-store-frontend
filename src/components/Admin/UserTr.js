@@ -4,12 +4,6 @@ const UserTr = (props) => {
     const { index, userDetail, updateUser, userUpdate } = props
     const [useUpdate, setuseUpdate] = useState({status:userDetail.status, role:userDetail.role});
 
-    const banUser = () => {
-        setuseUpdate( {...useUpdate, status:false})
-        updateUser(userDetail._id, useUpdate.status, useUpdate.role)
-    }
-
-
 
     return <tr>
         <th scope="row">{index+1}</th>
@@ -17,13 +11,13 @@ const UserTr = (props) => {
         <td>{userDetail.lastname}</td>
         <td>{userDetail.email}</td>
         <td>{userDetail.phoneno}</td>
-        <td>{userDetail.role ? "Admin" : "User"}</td>
+        <td>{userDetail.status == true ? "Enabled" : "Disabled"}</td>
+        <td>{userDetail.role}</td>
         <td className='text-center'>
             {
-                userDetail.role ? "" : 
+                userDetail.role == "Owner" ? "" : 
                 <div>
-                    <i className="far fa-edit text-success px-2" onClick={()=> {userUpdate()}}></i>
-                    <i className="far fa-ban text-Red px-2" onClick={()=>banUser()}></i>
+                    <i className="far fa-edit text-success px-2 cursor-pointer" onClick={()=> {userUpdate(userDetail._id)}}></i>
                 </div>
             }
         </td>

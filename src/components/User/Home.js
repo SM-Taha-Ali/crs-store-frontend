@@ -17,12 +17,14 @@ import '../../Stylesheets/shop.css'
 const Home = () => {
     // Alert show or dismiss
     const [show, setShow] = useState(false);
+    const [ loader, setLoader ] = useState(false);
 
-    // Context API call 
+    // useContext hook for global state call
     const context = useContext(productContext);
     const { products, getProduct,  filterProducts, setFilterProducts } = context
     useEffect(() => {
         getProduct()
+        setLoader(true)
     }, [])
 
     useEffect(() => {
@@ -92,11 +94,13 @@ const Home = () => {
             </div>
             <div className="contact-main">
                 <div className="container bg-white p-3">
-                    {/* Condition check for showing alert */}
                     {show ? <Alert variant={'success'} className='apni_card_alert' >
                         <b>Success!</b> Product has been added to card.
                     </Alert> : ""}
                     <div className="row">
+                    {!loader && <div className="loader-wrapper">
+                     <TailSpin color="#00BFFF" height={80} width={80} /> 
+                     </div> ||
                         <div className="col-lg-9 col-md-12 col-sm-12">
                             <div className="heading ps-2">
                                 LATEST PRODUCTS
@@ -111,13 +115,13 @@ const Home = () => {
                                 }
                             </div>
                         </div>
+                    }
                         {/* Side column */}
                         <div className="col-lg-3 col-md-12 col-sm-12">
                             <div className="heading">
                                 TOP <span className="text-Red">5</span> POPULAR
                                 <hr />
                                 <div className="py-2">
-                                    {/* Accordion component bootstrap  */}
                                     <Accordion />
                                 </div>
                             </div>
@@ -145,7 +149,6 @@ const Home = () => {
                         </div>
                         <div className="col-xl-9 col-lg-12">
                             <div className="row">
-                                {/* BOTTOM DIV */}
                                 {filterProducts.slice(0, 9).map((product) => {
                                     return <Card key={product._id} product={product} />
                                 })}

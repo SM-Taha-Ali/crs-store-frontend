@@ -8,9 +8,7 @@ const Navbar = () => {
     useEffect(() => {
     }, [location]);
 
-    var admin = localStorage.getItem('user_role');
-
-    admin = JSON.parse(admin)
+    var admin = (localStorage.getItem('user_role'));
 
     const context = useContext(cartContext);
     const { cartItems, getCartItems, updateCartItems } = context
@@ -77,9 +75,9 @@ const Navbar = () => {
                             <Link className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} to="/contact">Contact Us</Link>
                         </li>
                         <li className="nav-item px-1">
-                            {admin ?
-                                <Link className={`nav-link ${location.pathname === "/admin" ? "active" : ""}`} to="/admin">Admin Panel</Link> :
-                                ""
+                            {admin == "User" || admin == null ?
+                                "" :
+                                <Link className={`nav-link ${location.pathname === "/admin" ? "active" : ""}`} to="/admin">Admin Panel</Link> 
                             }
                         </li>
                     </ul>

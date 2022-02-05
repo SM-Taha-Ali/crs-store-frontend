@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Carousel from './Carousel';
 import Footer from '../Footer';
+import mailContext from '../../context/products/mailContext';
 
 const Contact = () => {
+    const context = useContext(mailContext)
+    const { mails, sendEmail } = context
+
+
+    const [mail, setMail] = useState({ name: "", email: "", message: "" });
+
+    const onChange = (e) => {
+        setMail({ ...mail, [e.target.name]: e.target.value })
+    }
+
+    const handleClick = () =>{
+        sendEmail(mail.name, mail.email, mail.message)
+    }
+
     return (
         <>
             <div className="not-main">
@@ -18,11 +33,11 @@ const Contact = () => {
                             <div className="col-md-6 col-sm-12 pe-3 py-2">
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Your Name</label>
-                                    <input type="text" className="form-control" id="" name='' required />
+                                    <input type="text" className="form-control" id="" name='name' required onChange={onChange} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Your Email</label>
-                                    <input type="email" className="form-control" id="" name='' required />
+                                    <input type="email" className="form-control" id="" name='email' required onChange={onChange} />
                                 </div>
 
                                 <div className="mb-3">
@@ -36,9 +51,11 @@ const Contact = () => {
                             <div className="col-md-6 col-sm-12  py-2">
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Message</label>
-                                    <textarea className="form-control height_100" id="" rows="8" placeholder='Write your message here...'></textarea>
+                                    <textarea className="form-control height_100" name='message' id="" rows="8" placeholder='Write your message here...' onChange={onChange}></textarea>
                                 </div>
-
+                            </div>
+                            <div className='text-end'>
+                                <button type="submit" className="btn btn-Red " onClick={handleClick}>Send Message</button>
                             </div>
                         </div>
 

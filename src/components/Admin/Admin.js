@@ -4,6 +4,7 @@ import Dashboard from './Dashboard';
 import Footer from '../Footer';
 import Orders from './Orders';
 import Products from './Products';
+import Mail from './Mail';
 import productContext from '../../context/products/productContext';
 
 import Users from './Users';
@@ -25,11 +26,13 @@ const Admin = () => {
         var products = document.getElementById("products")
         var orders = document.getElementById("orders")
         var users = document.getElementById("users")
+        var mails = document.getElementById("mails")
 
         if (e.target.innerHTML == "Dashboard") {
             dashboard.style.display = "block"
             products.style.display = "none"
             orders.style.display = "none"
+            mails.style.display = "none"
             users.style.display = "none"
         }
         if (e.target.innerHTML == "Products") {
@@ -37,15 +40,25 @@ const Admin = () => {
             dashboard.style.display = "none"
             orders.style.display = "none"
             users.style.display = "none"
+            mails.style.display = "none"
         }
         if (e.target.innerHTML == "Orders") {
             orders.style.display = "block"
             dashboard.style.display = "none"
             products.style.display = "none"
             users.style.display = "none"
+            mails.style.display = "none"
         }
         if (e.target.innerHTML == "Users") {
             users.style.display = "block"
+            dashboard.style.display = "none"
+            products.style.display = "none"
+            orders.style.display = "none"
+            mails.style.display = "none"
+        }
+        if (e.target.innerHTML == "Feedbacks") {
+            mails.style.display = "block"
+            users.style.display = "none"
             dashboard.style.display = "none"
             products.style.display = "none"
             orders.style.display = "none"
@@ -62,6 +75,7 @@ const Admin = () => {
                     <a href="" className="" onClick={e => clickHandler(e)}>Products</a>
                     <a href="" className="" onClick={e => clickHandler(e)}>Orders</a>
                     <a href="" className="" onClick={e => clickHandler(e)}>Users</a>
+                    <a href="" className="" onClick={e => clickHandler(e)}>Feedbacks</a>
                 </div>
                 {/* Use any element to open the sidenav */}
                 <span onClick={openNav} role="button" className='text-start my-2 d-inline-block ms-3 text-white'><i className="fas fa-bars text-white me-2"></i>  Menu</span>
@@ -78,6 +92,9 @@ const Admin = () => {
                     </div>
                     <div className='side-bar-control' id="users">
                         <Users />
+                    </div>
+                    <div className='side-bar-control' id="mails">
+                        <Mail />
                     </div>
                 </div>
                 <div id="secondary-main">
